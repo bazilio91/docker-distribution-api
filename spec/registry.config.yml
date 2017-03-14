@@ -1,0 +1,17 @@
+version: 0.1
+log:
+  level: debug
+  formatter: text
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+  delete:
+    enabled: true
+http:
+  addr: :5000
+  headers:
+    X-Content-Type-Options: [nosniff]

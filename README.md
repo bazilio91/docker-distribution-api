@@ -2,6 +2,9 @@
 
 Simple swipley/docker-api like API client for docker-distribution with limited support of endpoints
 
+
+[![Build Status](https://travis-ci.org/bazilio91/docker-distribution-api.svg?branch=master)](https://travis-ci.org/bazilio91/docker-distribution-api)
+
 ## Installation
 
 Add this line to your application's Gemfile:

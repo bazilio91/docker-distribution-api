@@ -1,4 +1,10 @@
 language: ruby
 rvm:
-  - 1.9.3
-before_install: gem install bundler -v 1.11.2
+  - 2.2
+before_install:
+ - gem install bundler -v 1.11.2
+ - docker pull registry:2.5
+ - docker run -d -p 127.0.0.1:5000:5000 -v "$(pwd)/spec/registry.config.yml:/etc/docker/registry/config.yml" registry:2.5
+sudo: required
+services:
+  - docker
