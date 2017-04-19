@@ -1,13 +1,13 @@
-require "docker/distribution/api/version"
-
 module Docker
   module Distribution
     module Api
       attr_accessor :creds, :logger
 
-      require 'docker/distribution/api/version'
       require 'docker/distribution/api/connection'
+      require 'docker/distribution/api/manifest'
       require 'docker/distribution/api/util'
+      require 'docker/distribution/api/version'
+      require 'docker/distribution/error'
 
       def version(connection = self.connection)
         response = connection.get('/')
