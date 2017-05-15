@@ -14,12 +14,12 @@ module Docker
       def initialize(url, opts)
         case
           when !url.is_a?(String)
-            raise ArgumentError, "Expected a String, got: '#{url}'"
+            raise ArgumentError, "Expected a String, got: '#{url.class}'"
           when !opts.is_a?(Hash)
-            raise ArgumentError, "Expected a Hash, got: '#{opts}'"
+            raise ArgumentError, "Expected a Hash, got: '#{opts.class}'"
           else
             uri = URI.parse(url)
-            if uri.scheme == 'https'
+            if ['https', 'http'].include? uri.scheme
               @url, @options = url, opts
             else
               @url, @options = "http://#{uri}", opts

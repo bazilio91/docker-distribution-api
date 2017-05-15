@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'logger'
-require 'docker/distribution/api/manifest'
 
 describe Docker::Distribution::Api::Manifest do
   before do
